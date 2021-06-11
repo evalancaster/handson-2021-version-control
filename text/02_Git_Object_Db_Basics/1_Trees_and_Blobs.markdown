@@ -2,7 +2,7 @@
 
 A blob generally stores the contents of a file.
 
-[fig:object-blob]
+![blob object](../../assets/images/figure/object-blob.png)
 
 You can use linkgit:git-show[1] to examine the contents of any blob. 
 Assuming we have the SHA for a blob, we can examine its contents like this:
