@@ -83,7 +83,7 @@ used for pulls:
     /home/alice/project
 
 (The complete configuration created by git-clone is visible using
-"git config -l", and the linkgit:git-config[1] man page
+"git config -l", and the [git config](https://git-scm.com/docs/git-config) man page
 explains the meaning of each option.)
 
 Git also keeps a pristine copy of Alice's master branch under the
@@ -98,17 +98,13 @@ perform clones and pulls using the ssh protocol:
     $ git clone alice.org:/home/alice/project myrepo
 
 Alternatively, git has a native protocol, or can use rsync or http;
-see linkgit:git-pull[1] for details.
-
-Git can also be used in a CVS-like mode, with a central repository
-that various users push changes to; see linkgit:git-push[1] and
-linkgit:gitcvs-migration[1].
+see [git pull](https://git-scm.com/docs/git-pull) for details.
 
 ## Public git repositories
 
 Another way to submit changes to a project is to tell the maintainer
 of that project to pull the changes from your repository using
-linkgit:git-pull[1].  This is a way to get
+[git pull](https://git-scm.com/docs/git-pull).  This is a way to get
 updates from the "main" repository, but it works just as well in the
 other direction.
 
@@ -158,7 +154,7 @@ maintainers to fetch your latest changes, but they do not allow write
 access.  For this, you will need to update the public repository with the
 latest changes created in your private repository.
 
-The simplest way to do this is using linkgit:git-push[1] and ssh; to
+The simplest way to do this is using [git push](https://git-scm.com/docs/git-push) and ssh; to
 update the remote branch named "master" with the latest state of your
 branch named "master", run
 
@@ -190,7 +186,7 @@ you should be able to perform the above push with just
     $ git push public-repo master
 
 See the explanations of the remote.<name>.url, branch.<name>.remote,
-and remote.<name>.push options in linkgit:git-config[1] for
+and remote.<name>.push options in [git config](https://git-scm.com/docs/git-config) for
 details.
 
 ## What to do when a push fails
@@ -226,5 +222,4 @@ intend to manage the branch.
 It's also possible for a push to fail in this way when other people have
 the right to push to the same repository.  In that case, the correct
 solution is to retry the push after first updating your work: either by a
-pull, or by a fetch followed by a rebase; see the next section and
-linkgit:gitcvs-migration[7] for more.
+pull, or by a fetch followed by a rebase.

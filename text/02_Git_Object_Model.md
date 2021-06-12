@@ -58,9 +58,9 @@ commit. This is a very important concept to understand when using Git.
 
 A blob generally stores the contents of a file.
 
-![blob object](../figure/object-blob.png)
+![Blob named 5b1d3.. with some code](../figure/object-blob.png)
 
-You can use linkgit:git-show[1] to examine the contents of any blob. 
+You can use [git show](https://git-scm.com/docs/git-show) to examine the contents of any blob. 
 Assuming we have the SHA for a blob, we can examine its contents like this:
 
     $ git show 6ff87c4664
@@ -84,10 +84,10 @@ renaming a file does not change the object that file is associated with.
 A tree is a simple object that has a bunch of pointers to blobs and other
 trees - it generally represents the contents of a directory or subdirectory.
 
-[fig:object-tree]
+![Tree named c36d4.. with some file blobs and dir trees](../figure/object-tree.png)
 
-The ever-versatile linkgit:git-show[1] command can also be used to
-examine tree objects, but linkgit:git-ls-tree[1] will give you more
+The ever-versatile [git show](https://git-scm.com/docs/git-show) command can also be used to
+examine tree objects, but [git ls-tree](https://git-scm.com/docs/git-ls-tree) will give you more
 details.  Assuming we have the SHA for a tree, we can examine it like this:
 
     $ git ls-tree fb3a8bdd0ce
@@ -124,11 +124,10 @@ attention to the executable bit.
 The "commit" object links a physical state of a tree with a description
 of how we got there and why. 
 
-[fig:object-commit]
+![Commit named ae668.. with tree, parent, author, committer, message](../figure/object-commit.png)
 
-You can use the --pretty=raw option to
-linkgit:git-show[1] or linkgit:git-log[1] to examine your favorite
-commit:
+You can use the --pretty=raw option to [git show](https://git-scm.com/docs/git-show) or
+[git log](https://git-scm.com/docs/git-log) to examine your favorite commit:
 
     $ git show -s --pretty=raw 2be7fcb476
     commit 2be7fcb4764f2dbcee52635b91fedb1b3dcf7ab4
@@ -166,9 +165,9 @@ of the tree referred to by this commit with the trees associated with
 its parents.  In particular, git does not attempt to record file renames
 explicitly, though it can identify cases where the existence of the same
 file data at changing paths suggests a rename.  (See, for example, the
--M option to linkgit:git-diff[1]).
+-M option to [git diff](https://git-scm.com/docs/git-diff)).
 
-A commit is usually created by linkgit:git-commit[1], which creates a
+A commit is usually created by [git commit](https://git-scm.com/docs/git-commit), which creates a
 commit whose parent is normally the current HEAD, and whose tree is
 taken from the content currently stored in the index.
 
@@ -191,7 +190,7 @@ If we had a simple project with the following directory structure:
 
 And we committed this to a Git repository, it would be represented like this:
 
-[fig:objects-example]
+![A commit with 3 nested trees and blobs](../figure/objects-example.png)
 
 You can see that we have created a **tree** object for each directory (including the root)
 and a **blob** object for each file.  Then we have a **commit** object to point
@@ -199,12 +198,12 @@ to the root, so we can track what our project looked like when it was committed.
 
 ## Tag Object
 
-[fig:object-tag]
+![Tag named 49e11.. with object, type, tagger](../figure/object-tag.png)
 
 A tag object contains an object name (called simply 'object'), object type,
 tag name, the name of the person ("tagger") who created the tag, and a
 message, which may contain a signature, as can be seen using
-linkgit:git-cat-file[1]:
+[git cat-file](https://git-scm.com/docs/git-cat-file):
 
     $ git cat-file tag v1.5.0
     object 437b1b20df4b356c9342dac8d38849f24ef44f27
@@ -221,7 +220,7 @@ linkgit:git-cat-file[1]:
     =2E+0
     -----END PGP SIGNATURE-----
 
-See the linkgit:git-tag[1] command to learn how to create and verify tag
-objects.  (Note that linkgit:git-tag[1] can also be used to create
+See the [git tag](https://git-scm.com/docs/git-tag) command to learn how to create and verify tag
+objects.  (Note that [git tag](https://git-scm.com/docs/git-tag) can also be used to create
 "lightweight tags", which are not tag objects at all, but just simple
 references whose names begin with "refs/tags/").

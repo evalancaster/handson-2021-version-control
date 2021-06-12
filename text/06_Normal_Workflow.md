@@ -5,13 +5,13 @@ Modify some files, then add their updated contents to the index:
     $ git add file1 file2 file3
 
 You are now ready to commit.  You can see what is about to be committed
-using linkgit:git-diff[1] with the --cached option:
+using [git diff](https://git-scm.com/docs/git-diff) with the --cached option:
 
     $ git diff --cached
 
-(Without --cached, linkgit:git-diff[1] will show you any changes that
+(Without --cached, [git diff](https://git-scm.com/docs/git-diff) will show you any changes that
 you've made but not yet added to the index.)  You can also get a brief
-summary of the situation with linkgit:git-status[1]:
+summary of the situation with [git status](https://git-scm.com/docs/git-status):
 
     $ git status
     # On branch master

@@ -2,7 +2,7 @@
 
 ## Lightweight Tags
 
-We can create a tag to refer to a particular commit by running linkgit:git-tag[1]
+We can create a tag to refer to a particular commit by running [git tag](https://git-scm.com/docs/git-tag)
 with no arguments.
 
     $ git tag stable-1 1b2e1d63ff

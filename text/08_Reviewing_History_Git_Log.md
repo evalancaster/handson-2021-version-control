@@ -1,6 +1,6 @@
 # Reviewing History - Git Log
 
-The linkgit:git-log[1] command can show lists of commits.  On its
+The [git log](https://git-scm.com/docs/git-log) command can show lists of commits.  On its
 own, it shows all commits reachable from the parent commit; but you
 can also make more specific requests:
 
@@ -112,7 +112,7 @@ or you can do 'short' format:
 
 You can also use 'medium', 'full', 'fuller', 'email' or 'raw'.  If those formats
 aren't exactly what you need, you can also create your own format with the
-'--pretty=format' option (see the linkgit:git-log[1] docs for all the formatting options).
+'--pretty=format' option (see the [git log](https://git-scm.com/docs/git-log) docs for all the formatting options).
 
     $ git log --pretty=format:'%h was %an, %ar, message: %s'
     a6b444f was Scott Chacon, 5 days ago, message: dammit, this is the second time this has re

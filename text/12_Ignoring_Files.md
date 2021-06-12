@@ -21,17 +21,17 @@ in the top level of your working directory, with contents such as:
     # Ignore objects and archives.
     *.[oa]
 
-See linkgit:gitignore[5] for a detailed explanation of the syntax.  You can
-also place .gitignore files in other directories in your working tree, and they
-will apply to those directories and their subdirectories.  The `.gitignore`
-files can be added to your repository like any other files 
-(just run `git add .gitignore` and `git commit`, as usual), which is convenient when the exclude
-patterns (such as patterns matching build output files) would also make sense
-for other users who clone your repository.
+See [gitignore](https://git-scm.com/docs/gitignore) for a detailed explanation
+of the syntax. You can also place .gitignore files in other directories in
+your working tree, and they will apply to those directories and their
+subdirectories.  The `.gitignore` files can be added to your repository like
+any other files (just run `git add .gitignore` and `git commit`, as usual),
+which is convenient when the exclude patterns (such as patterns matching build
+output files) would also make sense for other users who clone your repository.
 
 If you wish the exclude patterns to affect only certain repositories
 (instead of every repository for a given project), you may instead put
 them in a file in your repository named .git/info/exclude, or in any file
 specified by the `core.excludesfile` configuration variable.  Some git
 commands can also take exclude patterns directly on the command line.
-See linkgit:gitignore[5] for the details.
+See [gitignore](https://git-scm.com/docs/gitignore) for the details.

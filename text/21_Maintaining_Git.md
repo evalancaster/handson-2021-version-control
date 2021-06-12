@@ -6,7 +6,7 @@ On large repositories, git depends on compression to keep the history
 information from taking up too much space on disk or in memory.
 
 This compression is not performed automatically.  Therefore you
-should occasionally run linkgit:git-gc[1]:
+should occasionally run [git gc](https://git-scm.com/docs/git-gc):
 
     $ git gc
 
@@ -15,7 +15,7 @@ you may prefer to run git-gc when you are not doing other work.
 
 ## Ensuring reliability
 
-The linkgit:git-fsck[1] command runs a number of self-consistency checks
+The [git fsck](https://git-scm.com/docs/git-fsck) command runs a number of self-consistency checks
 on the repository, and reports on any problems.  This may take some
 time.  The most common warning by far is about "dangling" objects:
 

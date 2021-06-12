@@ -7,7 +7,7 @@ is what is currently in the index, not what is in your working directory.
 
 ## Looking at the Index
 
-The easiest way to see what is in the index is with the linkgit:git-status[1]
+The easiest way to see what is in the index is with the [git status](https://git-scm.com/docs/git-status)
 command.  When you run git status, you can see which files are staged
 (currently in your index), which are modified but not yet staged, and which
 are completely untracked.

@@ -23,14 +23,14 @@ If someone else administers the server, they should tell you what
 directory to put the repository in, and what git:// URL it will appear
 at.
 
-Otherwise, all you need to do is start linkgit:git-daemon[1]; it will
+Otherwise, all you need to do is start [git daemon](https://git-scm.com/docs/git-daemon); it will
 listen on port 9418.  By default, it will allow access to any directory
 that looks like a git directory and contains the magic file
 git-daemon-export-ok.  Passing some directory paths as git-daemon
 arguments will further restrict the exports to those paths.
 
 You can also run git-daemon as an inetd service; see the
-linkgit:git-daemon[1] man page for details.  (See especially the
+[git daemon](https://git-scm.com/docs/git-daemon) man page for details.  (See especially the
 examples section.)
 
 ## Exporting a git repository via http
@@ -48,7 +48,8 @@ adjustments to give web clients some extra information they need:
     $ chmod a+x hooks/post-update
 
 (For an explanation of the last two lines, see
-linkgit:git-update-server-info[1] and linkgit:githooks[5].)
+[git update-server-info](https://git-scm.com/docs/git-update-server-info) and
+[githooks](https://git-scm.com/docs/githooks).)
 
 Advertise the URL of proj.git.  Anybody else should then be able to
 clone or pull from that URL, for example with a command line like:

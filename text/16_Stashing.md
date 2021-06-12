@@ -2,7 +2,7 @@
 
 While you are in the middle of working on something complicated, you
 find an unrelated but obvious and trivial bug.  You would like to fix it
-before continuing.  You can use linkgit:git-stash[1] to save the current
+before continuing.  You can use [git stash](https://git-scm.com/docs/git-stash) to save the current
 state of your work, and after fixing the bug (or, optionally after doing
 so on a different branch and then coming back), unstash the
 work-in-progress changes.

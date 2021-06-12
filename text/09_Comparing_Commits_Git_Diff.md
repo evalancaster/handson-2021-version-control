@@ -1,7 +1,7 @@
 # Comparing Commits - Git Diff
 
 You can generate diffs between any two versions of your project using
-linkgit:git-diff[1]:
+[git diff](https://git-scm.com/docs/git-diff):
 
     $ git diff master..test
 
@@ -11,13 +11,13 @@ can use three dots instead of two:
 
     $ git diff master...test
 
-linkgit:git-diff[1] is an incredibly useful tool for figuring out what has
+[git diff](https://git-scm.com/docs/git-diff) is an incredibly useful tool for figuring out what has
 changed between any two points in your project's history, or to see what
 people are trying to introduce in new branches, etc.
 
 ## What you will commit
 
-You will commonly use linkgit:git-diff[1] for figuring out differences between 
+You will commonly use [git diff](https://git-scm.com/docs/git-diff) for figuring out differences between 
 your last commit, your index, and your current working directory.
 A common use is to simply run 
     

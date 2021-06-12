@@ -1,7 +1,7 @@
 # Finding with Git Grep
 
 Finding files with words or phrases in Git is really easy with the 
-linkgit:git-grep[1] command.  It is possible to do this with the normal
+[git grep](https://git-scm.com/docs/git-grep) command.  It is possible to do this with the normal
 unix 'grep' command, but with 'git grep' you can also search through
 previous versions of the project without having to check them out.
 

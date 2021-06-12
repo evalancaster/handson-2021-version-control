@@ -19,7 +19,7 @@ In other words, it causes the results of "git diff" and "git diff --cached"
 to both be empty.
 
 If you just want to restore just one file, say your hello.rb, use
-linkgit:git-checkout[1] instead
+[git checkout](https://git-scm.com/docs/git-checkout) instead
 
     $ git checkout -- hello.rb
     $ git checkout HEAD hello.rb
@@ -48,7 +48,7 @@ fundamentally different ways to fix the problem:
 ### Fixing a mistake with a new commit
 
 Creating a new commit that reverts an earlier change is very easy;
-just pass the linkgit:git-revert[1] command a reference to the bad
+just pass the [git revert](https://git-scm.com/docs/git-revert) command a reference to the bad
 commit; for example, to revert the most recent commit:
 
     $ git revert HEAD
@@ -68,7 +68,7 @@ conflicts manually, just as in the case of resolving a merge.
 ### Fixing a mistake by modifying a commit
 
 If you have just committed something but realize you need to fix
-up that commit, recent versions of linkgit:git-commit[1] support an 
+up that commit, recent versions of [git commit](https://git-scm.com/docs/git-commit) support an 
 **--amend** flag which instructs git to replace the HEAD commit
 with a new one, based on the current contents of the index.  This
 gives you an opportunity to add files that you forgot to add or
@@ -76,7 +76,7 @@ correct typos in a commit message, prior to pushing the change
 out for the world to see.
 
 If you find a mistake in an older commit, but still one that you
-have not yet published to the world, you use linkgit:git-rebase[1]
+have not yet published to the world, you use [git rebase](https://git-scm.com/docs/git-rebase)
 in interactive mode, with "git rebase -i" marking the change
 that requires correction with **edit**.  This will allow you
 to amend the commit during the rebasing process.

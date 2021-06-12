@@ -75,7 +75,7 @@ out.
 ## How to merge
 
 You can rejoin two diverging branches of development using
-linkgit:git-merge[1]:
+[git merge](https://git-scm.com/docs/git-merge):
 
     $ git merge branchname
 
@@ -106,13 +106,13 @@ the working tree in a special state that gives you all the
 information you need to help resolve the merge.
 
 Files with conflicts are marked specially in the index, so until you
-resolve the problem and update the index, linkgit:git-commit[1] will
+resolve the problem and update the index, [git commit](https://git-scm.com/docs/git-commit) will
 fail:
 
     $ git commit
     file.txt: needs merge
 
-Also, linkgit:git-status[1] will list those files as "unmerged", and the
+Also, [git status](https://git-scm.com/docs/git-status) will list those files as "unmerged", and the
 files with conflicts will have conflict markers added, like this:
 
     <<<<<<< HEAD:file.txt
