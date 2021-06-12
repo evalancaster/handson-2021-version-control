@@ -1,4 +1,4 @@
-## Basic Branching and Merging ##
+# Basic Branching and Merging
 
 A single git repository can maintain multiple branches of
 development.  To create a new branch named "experimental", use
@@ -72,7 +72,7 @@ delete the branch with
 Branches are cheap and easy, so this is a good way to try something
 out.
 
-### How to merge ###
+## How to merge
 
 You can rejoin two diverging branches of development using
 linkgit:git-merge[1]:
@@ -99,7 +99,7 @@ If you examine the resulting commit using gitk, you will see that it
 has two parents: one pointing to the top of the current branch, and
 one to the top of the other branch.
 
-### Resolving a merge ###
+## Resolving a merge
 
 When a merge isn't resolved automatically, git leaves the index and
 the working tree in a special state that gives you all the
@@ -134,7 +134,7 @@ your own if desired.
 The above is all you need to know to resolve a simple merge.  But git
 also provides more information to help resolve conflicts:
 
-### Undoing a merge ###
+## Undoing a merge
 
 If you get stuck and decide to just give up and throw the whole mess
 away, you can always return to the pre-merge state with
@@ -149,7 +149,7 @@ However, this last command can be dangerous in some cases--never throw away a
 commit if that commit may itself have been merged into another branch, as
 doing so may confuse further merges.
 
-### Fast-forward merges ###
+## Fast-forward merges
 
 There is one special case not mentioned above, which is treated differently.
 Normally, a merge results in a merge commit with two parents, one for each of
@@ -160,5 +160,3 @@ commit present in the current branch is already contained in the other--then
 git just performs a "fast forward"; the head of the current branch is moved
 forward to point at the head of the merged-in branch, without any new commits
 being created.
-
-[gitcast:c6-branch-merge]("GitCast #6: Branching and Merging")

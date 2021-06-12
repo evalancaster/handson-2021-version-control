@@ -1,11 +1,11 @@
-## Getting a Git Repository ##
+# Getting a Git Repository
 
 So now that we're all set up, we need a Git repository. We can do this one of
 two ways - we can *clone* one that already exists, or we can *initialize* one
 either from existing files that aren't in source control yet, or from an empty
 directory.
 
-### Cloning a Repository ###
+## Cloning a Repository
 
 In order to get a copy of a project, you will need to know the project's Git
 URL - the location of the repository. Git can operate over many different
@@ -32,7 +32,7 @@ cloned project. (ie. *git clone
 http://git.kernel.org/linux/kernel/git/torvalds/linux-2.6.git* will result in
 a new directory named 'linux-2.6')
 
-### Initializing a New Repository ###
+## Initializing a New Repository
 
 Assume you have a tarball named project.tar.gz with your initial work. You can
 place it under git revision control as follows.
@@ -47,5 +47,3 @@ Git will reply
 
 You've now initialized the working directory--you may notice a new
 directory created, named ".git".
-
-[gitcast:c1_init](GitCast #1 - setup, init and cloning)

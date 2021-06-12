@@ -44,8 +44,8 @@ directory.
 ## 'git help' Pages
 
 Git includes a detailed manual on every command. If you are unsure about any
-command, try `git help` followed by the command on the terminal. Within the
-manual pages, you can search for keywords by pressing `/`.
+command, try `git help [some command]` on the terminal. Within the manual
+pages, you can search for keywords by pressing `/`.
 
 ## References
 

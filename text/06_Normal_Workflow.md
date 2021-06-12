@@ -1,4 +1,4 @@
-## Normal Workflow ##
+# Normal Workflow
 
 Modify some files, then add their updated contents to the index:
 
@@ -18,9 +18,9 @@ summary of the situation with linkgit:git-status[1]:
     # Changes to be committed:
     #   (use "git reset HEAD <file>..." to unstage)
     #
-    #	modified:   file1
-    #	modified:   file2
-    #	modified:   file3
+    #   modified:   file1
+    #   modified:   file2
+    #   modified:   file3
     #
 
 If you need to make any further adjustments, do so now, and then add any
@@ -45,8 +45,7 @@ thorough description.  Tools that turn commits into email, for
 example, use the first line on the Subject: line and the rest of the
 commit message in the body.
 
-
-#### Git tracks content not files ####
+### Git tracks content not files
 
 Many revision control systems provide an "add" command that tells the
 system to start tracking changes to a new file.  Git's "add" command
@@ -54,5 +53,3 @@ does something simpler and more powerful: `git add` is used both for new
 and newly modified files, and in both cases it takes a snapshot of the
 given files and stages that content in the index, ready for inclusion in
 the next commit.
-
-[gitcast:c2_normal_workflow]("GitCast #2: Normal Workflow")

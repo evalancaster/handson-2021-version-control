@@ -1,4 +1,4 @@
-## Comparing Commits - Git Diff ##
+# Comparing Commits - Git Diff
 
 You can generate diffs between any two versions of your project using
 linkgit:git-diff[1]:
@@ -15,7 +15,7 @@ linkgit:git-diff[1] is an incredibly useful tool for figuring out what has
 changed between any two points in your project's history, or to see what
 people are trying to introduce in new branches, etc.
 
-### What you will commit ###
+## What you will commit
 
 You will commonly use linkgit:git-diff[1] for figuring out differences between 
 your last commit, your index, and your current working directory.
@@ -38,7 +38,7 @@ Lastly, you can run
 which shows changes in the working directory since your last commit; 
 what you would be committing if you run "git commit -a".
 
-### More Diff Options ###
+## More Diff Options
 
 If you want to see how your current working directory differs from the state of
 the project in another branch, you can run something like

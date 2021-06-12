@@ -9,13 +9,13 @@
 4. [The Git Index](text/04_Git_Index.md)
 
 ### Basic Usage
-5. Getting a Git Repository
-6. Normal Workflow
-7. Basic Branching and Merging
-8. Reviewing History - Git Log
-9. Comparing Commits - Git Diff
-10. Distributed Workflows
-11. Git Tag
+5. [Getting a Git Repository](text/05_Getting_a_Git_Repo.md)
+6. [Normal Workflow](text/06_Normal_Workflow.md)
+7. [Basic Branching and Merging](text/07_Basic_Branching_and_Merging.md)
+8. [Reviewing History - Git Log](text/08_Reviewing_History_Git_Log.md)
+9. [Comparing Commits - Git Diff](text/09_Comparing_Commits_Git_Diff.md)
+10. [Distributed Workflows](text/10_Distributed_Workflows.md)
+11. [Git Tag](text/11_Git_Tag.md)
 
 ### Intermediate Usage
 12. Ignoring files
@@ -34,8 +34,8 @@
 ## Notes
 This guide is written exclusively in Markdown—an easy-to-use, human-readable
 markup language commonly used for documentation and communication on Github.
-You can quickly learn Markdown through this
-[quick guide](https://guides.github.com/features/mastering-markdown/).
+You can quickly learn Markdown through
+[this guide](https://guides.github.com/features/mastering-markdown/).
 
 ## Credits
 Adapted from [gitbook](https://github.com/schacon/gitbook) by

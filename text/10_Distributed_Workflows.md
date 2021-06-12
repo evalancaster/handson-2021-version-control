@@ -1,4 +1,4 @@
-## Distributed Workflows ##
+# Distributed Workflows
 
 Suppose that Alice has started a new project with a git repository in
 /home/alice/project, and that Bob, who has a home directory on the
@@ -104,8 +104,7 @@ Git can also be used in a CVS-like mode, with a central repository
 that various users push changes to; see linkgit:git-push[1] and
 linkgit:gitcvs-migration[1].
 
-
-### Public git repositories ###
+## Public git repositories
 
 Another way to submit changes to a project is to tell the maintainer
 of that project to pull the changes from your repository using
@@ -142,17 +141,17 @@ like this:
 
                             you push
       your personal repo ------------------> your public repo
-    	^                                     |
-    	|                                     |
-    	| you pull                            | they pull
-    	|                                     |
-    	|                                     |
+        ^                                     |
+        |                                     |
+        | you pull                            | they pull
+        |                                     |
+        |                                     |
             |               they push             V
       their public repo <------------------- their repo
       
 
 
-### Pushing changes to a public repository ###
+## Pushing changes to a public repository
 
 Note that exporting via http or git allow other
 maintainers to fetch your latest changes, but they do not allow write
@@ -183,7 +182,7 @@ save typing; so, for example, after
 
     $ cat >>.git/config <<EOF
     [remote "public-repo"]
-    	url = ssh://yourserver.com/~you/proj.git
+        url = ssh://yourserver.com/~you/proj.git
     EOF
 
 you should be able to perform the above push with just
@@ -194,7 +193,7 @@ See the explanations of the remote.<name>.url, branch.<name>.remote,
 and remote.<name>.push options in linkgit:git-config[1] for
 details.
 
-### What to do when a push fails ###
+## What to do when a push fails
 
 If a push would not result in a fast forward of the
 remote branch, then it will fail with an error like:
@@ -206,9 +205,9 @@ remote branch, then it will fail with an error like:
 
 This can happen, for example, if you:
 
-	- use `git-reset --hard` to remove already-published commits, or
-	- use `git-commit --amend` to replace already-published commits, or
-	- use `git-rebase` to rebase any already-published commits.
+    - use `git-reset --hard` to remove already-published commits, or
+    - use `git-commit --amend` to replace already-published commits, or
+    - use `git-rebase` to rebase any already-published commits.
 
 You may force git-push to perform the update anyway by preceding the
 branch name with a plus sign:
@@ -229,5 +228,3 @@ the right to push to the same repository.  In that case, the correct
 solution is to retry the push after first updating your work: either by a
 pull, or by a fetch followed by a rebase; see the next section and
 linkgit:gitcvs-migration[7] for more.
-
-[gitcast:c8-dist-workflow]("GitCast #8: Distributed Workflow")
