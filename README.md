@@ -3,10 +3,10 @@
 ## Table of Contents
 
 ### Introduction
-1. Welcome to Git
-2. The Git Object Model
-3. Git Directory and Working Directory
-4. The Git Index
+1. [Welcome to Git](text/01_Introduction.md)
+2. [The Git Object Model](text/02_Git_Object_Model.md)
+3. [Git Directory and Working Directory](text/03_Git_Directory_and_Working_Directory.md)
+4. [The Git Index](text/04_Git_Index.md)
 
 ### Basic Usage
 5. Getting a Git Repository
@@ -30,6 +30,12 @@
 20. Maintaining Git
 21. Setting Up A Public Repository
 22. Setting Up a Private Repository
+
+## Notes
+This guide is written exclusively in Markdown—an easy-to-use, human-readable
+markup language commonly used for documentation and communication on Github.
+You can quickly learn Markdown through this
+[quick guide](https://guides.github.com/features/mastering-markdown/).
 
 ## Credits
 Adapted from [gitbook](https://github.com/schacon/gitbook) by
