@@ -1,4 +1,4 @@
-## Setting Up A Public Repository ##
+# Setting Up A Public Repository
 
 Assume your personal repository is in the directory ~/proj.  We
 first create a new clone of the repository and tell git-daemon that it
@@ -15,7 +15,7 @@ Next, copy proj.git to the server where you plan to host the
 public repository.  You can use scp, rsync, or whatever is most
 convenient.
 
-### Exporting a git repository via the git protocol ###
+## Exporting a git repository via the git protocol
 
 This is the preferred method.
 
@@ -33,7 +33,7 @@ You can also run git-daemon as an inetd service; see the
 linkgit:git-daemon[1] man page for details.  (See especially the
 examples section.)
 
-### Exporting a git repository via http ###
+## Exporting a git repository via http
 
 The git protocol gives better performance and reliability, but on a
 host with a web server set up, http exports may be simpler to set up.

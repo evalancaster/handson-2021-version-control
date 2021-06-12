@@ -1,6 +1,6 @@
-## Maintaining Git ##
+# Maintaining Git
 
-### Ensuring good performance ###
+## Ensuring good performance
 
 On large repositories, git depends on compression to keep the history
 information from taking up too much space on disk or in memory.
@@ -13,8 +13,7 @@ should occasionally run linkgit:git-gc[1]:
 to recompress the archive.  This can be very time-consuming, so
 you may prefer to run git-gc when you are not doing other work.
 
-
-### Ensuring reliability ###
+## Ensuring reliability
 
 The linkgit:git-fsck[1] command runs a number of self-consistency checks
 on the repository, and reports on any problems.  This may take some

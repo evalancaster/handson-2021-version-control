@@ -1,11 +1,11 @@
-## Undoing in Git - Reset, Checkout and Revert ##
+# Undoing in Git - Reset, Checkout and Revert
 
 Git provides multiple methods for fixing up mistakes as you
 are developing.  Selecting an appropriate method depends on whether
 or not you have committed the mistake, and if you have committed the
 mistake, whether you have shared the erroneous commit with anyone else.
 
-### Fixing un-committed mistakes ###
+## Fixing un-committed mistakes
 
 If you've messed up the working tree, but haven't yet committed your
 mistake, you can return the entire working tree to the last committed
@@ -30,7 +30,7 @@ will restore hello.rb to the version in the HEAD revision, so
 that both "git diff hello.rb" and "git diff --cached hello.rb"
 return no differences.
 
-### Fixing committed mistakes ###
+## Fixing committed mistakes
 
 If you make a commit that you later wish you hadn't, there are two
 fundamentally different ways to fix the problem:
@@ -45,7 +45,7 @@ fundamentally different ways to fix the problem:
     change, and cannot correctly perform repeated merges from
     a branch that has had its history changed.
 
-#### Fixing a mistake with a new commit ####
+### Fixing a mistake with a new commit
 
 Creating a new commit that reverts an earlier change is very easy;
 just pass the linkgit:git-revert[1] command a reference to the bad
@@ -65,7 +65,7 @@ intact any changes made since then.  If more recent changes overlap
 with the changes to be reverted, then you will be asked to fix
 conflicts manually, just as in the case of resolving a merge.
 
-#### Fixing a mistake by modifying a commit ####
+### Fixing a mistake by modifying a commit
 
 If you have just committed something but realize you need to fix
 up that commit, recent versions of linkgit:git-commit[1] support an 

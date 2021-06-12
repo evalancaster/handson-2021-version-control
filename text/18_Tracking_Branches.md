@@ -1,4 +1,4 @@
-## Tracking Branches ##
+# Tracking Branches
 
 A 'tracking branch' in Git is a local branch that is connected to a remote
 branch.  When you push and pull on that branch, it automatically pushes and
@@ -11,16 +11,16 @@ explicitly.
 The 'git clone' command automatically sets up a 'master' branch that is
 a tracking branch for 'origin/master' - the master branch on the cloned
 repository.
-	
+    
 You can create a tracking branch manually by adding the '--track' option
 to the 'branch' command in Git. 
 
-	git branch --track experimental origin/experimental
+    git branch --track experimental origin/experimental
 
 Then when you run:
 
-	$ git pull experimental
-	
+    $ git pull experimental
+    
 It will automatically fetch from 'origin' and merge 'origin/experimental' 
 into your local 'experimental' branch.
 

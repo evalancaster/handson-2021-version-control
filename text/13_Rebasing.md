@@ -1,4 +1,4 @@
-## Rebasing ##
+# Rebasing
 
 Suppose that you create a branch "mywork" on a remote-tracking branch
 "origin".
@@ -64,6 +64,3 @@ At any point you may use the `--abort` option to abort this process and
 return mywork to the state it had before you started the rebase:
 
     $ git rebase --abort
-
-
-[gitcast:c7-rebase]("GitCast #7: Rebasing")

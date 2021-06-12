@@ -18,18 +18,18 @@
 11. [Git Tag](text/11_Git_Tag.md)
 
 ### Intermediate Usage
-12. Ignoring files
-13. Rebasing
-14. Interactive Rebasing
-15. Interactive Adding
-15. Stashing
-16. Git Treeishes
-17. Tracking Branches
-18. Finding with Git Grep
-19. Undoing in Git - Reset, Checkout and Revert
-20. Maintaining Git
-21. Setting Up A Public Repository
-22. Setting Up a Private Repository
+12. [Ignoring files](text/12_Ignoring_Files.md)
+13. [Rebasing](text/13_Rebasing.md)
+14. [Interactive Rebasing](text/14_Interactive_Rebasing.md)
+15. [Interactive Adding](text/15_Interactive_Adding.md)
+16. [Stashing](text/16_Stashing.md)
+17. [Git Treeishes](text/17_Git_Treeishes.md)
+18. [Tracking Branches](text/18_Tracking_Branches.md)
+19. [Finding with Git Grep](text/19_Finding_in_Git_Grep.md)
+20. [Undoing in Git - Reset, Checkout, and Revert](text/20_Undoing_in_Git_Reset_and_Revert.md)
+21. [Maintaining Git](text/21_Maintaining_Git.md)
+22. [Setting Up A Public Repository](text/22_Setting_Up_a_Public_Repo.md)
+23. [Setting Up a Private Repository](text/23_Setting_Up_a_Private_Repo.md)
 
 ## Notes
 This guide is written exclusively in Markdown—an easy-to-use, human-readable
