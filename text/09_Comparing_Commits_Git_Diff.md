@@ -11,15 +11,15 @@ can use three dots instead of two:
 
     git diff master...test
 
-[git diff](https://git-scm.com/docs/git-diff) is an incredibly useful tool for figuring out what has
-changed between any two points in your project's history, or to see what
-people are trying to introduce in new branches, etc.
+[git diff](https://git-scm.com/docs/git-diff) is an incredibly useful tool for
+figuring out what has changed between any two points in your project's history,
+or to see what people are trying to introduce in new branches, etc.
 
 ## What you will commit
 
-You will commonly use [git diff](https://git-scm.com/docs/git-diff) for figuring out differences between
-your last commit, your index, and your current working directory.
-A common use is to simply run
+You will commonly use [git diff](https://git-scm.com/docs/git-diff) for
+figuring out differences between your last commit, your index, and your current
+working directory. A common use is to simply run
 
     git diff
 
