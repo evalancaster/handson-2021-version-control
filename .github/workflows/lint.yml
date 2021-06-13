@@ -13,5 +13,5 @@ jobs:
     - name: Markdown Linting Action
       uses: avto-dev/markdown-lint@v1.5.0
       with:
-        config: '/lint/config.yml'
+        config: './.lint/config.yml'
         args: './text'

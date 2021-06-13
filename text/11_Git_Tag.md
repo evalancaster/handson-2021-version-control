@@ -15,9 +15,9 @@ and possibly sign it cryptographically, then we can create a *tag object* instea
 
 ## Tag Objects
 
-If one of **-a**, **-s**, or **-u *key-id*** is passed, the command creates a tag object,
-and requires the tag message. Unless -m *msg* or -F *file* is given, an editor
-is started for the user to type in the tag message.
+If one of **-a**, **-s**, or **-u *key-id*** is passed, the command creates a
+tag object, and requires the tag message. Unless -m *msg* or -F *file* is given,
+an editor is started for the user to type in the tag message.
 
 When this happens, a new object is added to the Git object database and the
 tag ref points to that _tag object_, rather than the commit itself. The strength

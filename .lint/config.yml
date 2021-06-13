@@ -1,0 +1,8 @@
+default: true
+
+# line length
+MD013:
+  code_block_line_length: 100
+
+# bare URL
+MD034: false

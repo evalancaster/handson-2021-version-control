@@ -14,7 +14,6 @@ project, possessing its own copy of the original project's history.
 
 Bob then makes some changes and commits them:
 
-
     (edit files)
     git commit -a
     (repeat as necessary)

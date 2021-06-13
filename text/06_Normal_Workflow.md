@@ -9,9 +9,9 @@ using [git diff](https://git-scm.com/docs/git-diff) with the --cached option:
 
     git diff --cached
 
-(Without --cached, [git diff](https://git-scm.com/docs/git-diff) will show you any changes that
-you've made but not yet added to the index.)  You can also get a brief
-summary of the situation with [git status](https://git-scm.com/docs/git-status):
+(Without --cached, [git diff](https://git-scm.com/docs/git-diff) will show you
+any changes that you've made but not yet added to the index.)  You can also get
+a brief summary of the situation with [git status](https://git-scm.com/docs/git-status):
 
     $ git status
     On branch master
