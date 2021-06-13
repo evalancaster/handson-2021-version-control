@@ -1,25 +1,25 @@
 # Reviewing History - Git Log
 
-The [git log](https://git-scm.com/docs/git-log) command can show lists of commits.  On its
-own, it shows all commits reachable from the parent commit; but you
-can also make more specific requests:
+The [git log](https://git-scm.com/docs/git-log) command can show lists of
+commits. On its own, it shows all commits reachable from the parent commit; but
+you can also make more specific requests:
 
-    $ git log v2.5..        # commits since (not reachable from) v2.5
-    $ git log test..master  # commits reachable from master but not test
-    $ git log master..test  # commits reachable from test but not master
-    $ git log master...test # commits reachable from either test or
-                            #    master, but not both
+    $ git log v2.5..                # commits since (not reachable from) v2.5
+    $ git log test..master          # commits reachable from master but not test
+    $ git log master..test          # commits reachable from test but not master
+    $ git log master...test         # commits reachable from either test or
+                                    #   master, but not both
     $ git log --since="2 weeks ago" # commits from the last 2 weeks
-    $ git log Makefile      # commits that modify Makefile
-    $ git log fs/           # commits that modify any file under fs/
-    $ git log -S'foo()'     # commits that add or remove any file data
-                            # matching the string 'foo()'
-    $ git log --no-merges   # dont show merge commits
+    $ git log Makefile              # commits that modify Makefile
+    $ git log fs/                   # commits that modify any file under fs/
+    $ git log -S'foo()'             # commits that add or remove any file data
+                                    #   matching the string 'foo()'
+    $ git log --no-merges           # dont show merge commits
 
 And of course you can combine all of these; the following finds
 commits since v2.5 which touch the Makefile or any file under fs:
 
-    $ git log v2.5.. Makefile fs/
+    git log v2.5.. Makefile fs/
 
 Git log will show a listing of each commit, with the most recent commits
 first, that match the arguments given to the log command.
@@ -29,14 +29,14 @@ first, that match the arguments given to the log command.
     Date:   Thu Aug 14 13:37:41 2008 -0400
 
         git format-patch documentation: clarify what --cover-letter does
-    
+
     commit 7950659dc9ef7f2b50b18010622299c508bfdfc3
     Author: Eric Raible <raible@gmail.com>
     Date:   Thu Aug 14 10:12:54 2008 -0700
 
         bash completion: 'git apply' should use 'fix' not 'strip'
         Bring completion up to date with the man page.
-   
+
 You can also ask git log to show patches:
 
     $ git log -p
@@ -63,18 +63,17 @@ You can also ask git log to show patches:
 
 ## Log Stats
 
-If you pass the <code>--stat</code> option to 'git log', it will show you
-which files have changed in that commit and how many lines were added and 
-removed from each.
+If you pass the `--stat` option to 'git log', it will show you which files have
+changed in that commit and how many lines were added and removed from each.
 
     $ git log --stat
-    
+
     commit dba9194a49452b5f093b96872e19c91b50e526aa
     Author: Junio C Hamano <gitster@pobox.com>
     Date:   Sun Aug 17 15:44:11 2008 -0700
 
         Start 1.6.0.X maintenance series
-    
+
      Documentation/RelNotes-1.6.0.1.txt |   15 +++++++++++++++
      RelNotes                           |    2 +-
      2 files changed, 16 insertions(+), 1 deletions(-)
@@ -86,7 +85,7 @@ option can take a number of preset formats, such as 'oneline':
 
     $ git log --pretty=oneline
     a6b444f570558a5f31ab508dc2a24dc34773825f dammit, this is the second time this has reverted
-    49d77f72783e4e9f12d1bbcacc45e7a15c800240 modified index to create refs/heads if it is not 
+    49d77f72783e4e9f12d1bbcacc45e7a15c800240 modified index to create refs/heads if it is not
     9764edd90cf9a423c9698a2f1e814f16f0111238 Add diff-lcs dependency
     e1ba1e3ca83d53a2f16b39c453fad33380f8d1cc Add dependency for Open4
     0f87b4d9020fff756c18323106b3fd4e2f422135 merged recent changes: * accepts relative alt pat
@@ -112,7 +111,8 @@ or you can do 'short' format:
 
 You can also use 'medium', 'full', 'fuller', 'email' or 'raw'.  If those formats
 aren't exactly what you need, you can also create your own format with the
-'--pretty=format' option (see the [git log](https://git-scm.com/docs/git-log) docs for all the formatting options).
+'--pretty=format' option (see the [git log](https://git-scm.com/docs/git-log)
+docs for all the formatting options).
 
     $ git log --pretty=format:'%h was %an, %ar, message: %s'
     a6b444f was Scott Chacon, 5 days ago, message: dammit, this is the second time this has re
@@ -120,26 +120,26 @@ aren't exactly what you need, you can also create your own format with the
     9764edd was Hans Engel, 11 days ago, message: Add diff-lcs dependency
     e1ba1e3 was Hans Engel, 11 days ago, message: Add dependency for Open4
     0f87b4d was Scott Chacon, 12 days ago, message: merged recent changes:
-    
+
 Another interesting thing you can do is visualize the commit graph with the
 '--graph' option, like so:
 
     $ git log --pretty=format:'%h : %s' --graph
     * 2d3acf9 : ignore errors from SIGCHLD on trap
     *   5e3ee11 : Merge branch 'master' of git://github.com/dustin/grit
-    |\  
+    |\
     | * 420eac9 : Added a method for getting the current branch.
     * | 30e367c : timeout code and tests
     * | 5a09431 : add timeout protection to grit
     * | e1193f8 : support for heads with slashes in them
-    |/  
+    |/
     * d6016bc : require time for xmlschema
 
 It will give a pretty nice ASCII representation of the commit history lines.
 
 ## Ordering the Log
 
-You can also view the log entries in a few different orders. 
+You can also view the log entries in a few different orders.
 Note that git log starts with the most recent commit and works
 backwards through the parents; however, since git history can contain
 multiple independent lines of development, the particular order that
@@ -157,18 +157,18 @@ development lines are all grouped together.
 
     $ git log --pretty=format:'%h : %s' --topo-order --graph
     *   4a904d7 : Merge branch 'idx2'
-    |\  
+    |\
     | *   dfeffce : merged in bryces changes and fixed some testing issues
-    | |\  
+    | |\
     | | * 23f4ecf : Clarify how to get a full count out of Repo#commits
     | | *   9d6d250 : Appropriate time-zone test fix from halorgium
-    | | |\  
+    | | |\
     | | | * cec36f7 : Fix the to_hash test to run in US/Pacific time
     | | * | decfe7b : fixed manifest and grit.rb to make correct gemspec
     | | * | cd27d57 : added lib/grit/commit_stats.rb to the big list o' files
     | | * | 823a9d9 : cleared out errors by adding in Grit::Git#run method
     | | * |   4eb3bf0 : resolved merge conflicts, hopefully amicably
-    | | |\ \  
+    | | |\ \
     | | | * | d065e76 : empty commit to push project to runcoderun
     | | | * | 3fa3284 : whitespace
     | | | * | d01cffd : whitespace
@@ -184,28 +184,28 @@ development lines are all grouped together.
     | | | * | 0a7d387 : Removed debug print.
     | | | * | 4d6b69c : Fixed to close opened file description.
 
-You can also use '--date-order', which orders the commits primarily by commit date.
-This option is similar to --topo-order in the sense that no parent comes before all of its children, 
-but otherwise things are still ordered in the commit timestamp order. You can
-see that development lines are not grouped together here, that they jump around
-as parallel development occurred:
+You can also use '--date-order', which orders the commits primarily by commit
+date. This option is similar to topo-order in the sense that no parent comes
+before all of its children, but otherwise things are still ordered in the
+commit timestamp order. You can see that development lines are not grouped
+together here, that they jump around as parallel development occurred:
 
     $ git log --pretty=format:'%h : %s' --date-order --graph
     *   4a904d7 : Merge branch 'idx2'
-    |\  
+    |\
     * | 81a3e0d : updated packfile code to recognize index v2
     | *   dfeffce : merged in bryces changes and fixed some testing issues
-    | |\  
+    | |\
     | * | c615d80 : fixed a log issue
-    |/ /  
+    |/ /
     | * 23f4ecf : Clarify how to get a full count out of Repo#commits
     | *   9d6d250 : Appropriate time-zone test fix from halorgium
-    | |\  
+    | |\
     | * | decfe7b : fixed manifest and grit.rb to make correct gemspec
     | * | cd27d57 : added lib/grit/commit_stats.rb to the big list o' file
     | * | 823a9d9 : cleared out errors by adding in Grit::Git#run method
     | * |   4eb3bf0 : resolved merge conflicts, hopefully amicably
-    | |\ \  
+    | |\ \
     | * | | ba23640 : Fix CommitDb errors in test (was this the right fix?
     | * | | 4d8873e : test_commit no longer fails if you're not in PDT
     | * | | b3285ad : Use the appropriate method to find a first occurrenc
@@ -218,6 +218,5 @@ as parallel development occurred:
     | | * | d01cffd : whitespace
     | * | | a0e4a3d : updated grit gemspec
     | * | | 7569d0d : including code from github updates
-
 
 Lastly, you can reverse the order of the log with the '--reverse' option.

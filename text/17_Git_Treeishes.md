@@ -6,7 +6,7 @@ to as a 'treeish'.
 
 ## Partial Sha
 
-If your commit sha is '<code>980e3ccdaac54a0d4de358f3fe5d718027d96aae</code>', git will 
+If your commit sha is `980e3ccdaac54a0d4de358f3fe5d718027d96aae`, git will
 recognize any of the following identically:
 
     980e3ccdaac54a0d4de358f3fe5d718027d96aae
@@ -31,22 +31,22 @@ are equivalent:
     refs/heads/master
     v1.0
     refs/tags/v1.0
-    
+
 Which means the following will give you identical output:
 
-    $ git log master
-    
-    $ git log refs/tags/v1.0
-    
+    git log master
+
+    git log refs/tags/v1.0
+
 ## Date Spec
 
-The Ref Log that git keeps will allow you to do some relative stuff locally, 
-such as: 
+The Ref Log that git keeps will allow you to do some relative stuff locally,
+such as:
 
     master@{yesterday}
 
     master@{1 month ago}
-    
+
 Which is shorthand for 'where the master branch head was yesterday', etc. Note
 that this format can result in different shas on different computers, even if
 the master branch is currently pointing to the same place.
@@ -59,21 +59,21 @@ For example:
     master@{5}
 
 will give you the 5th prior value of the master head ref.
-    
+
 ## Carrot Parent
 
 This will give you the Nth parent of a particular commit.  This format is only
 useful on merge commits - commit objects that have more than one direct parent.
 
     master^2
-    
+
 ## Tilde Spec
 
 The tilde spec will give you the Nth grandparent of a commit object.  For example,
 
     master~2
-    
-will give us the first parent of the first parent of the commit that master 
+
+will give us the first parent of the first parent of the commit that master
 points to.  It is equivalent to:
 
     master^^
@@ -86,7 +86,7 @@ You can keep doing this, too.  The following specs will point to the same commit
 
 ## Tree Pointer
 
-This disambiguates a commit from the tree that it points to.  If you want the 
+This disambiguates a commit from the tree that it points to.  If you want the
 sha that a commit points to, you can add the '^{tree}' spec to the end of it.
 
     master^{tree}
@@ -97,7 +97,7 @@ If you want the sha of a particular blob, you can add the blob path at the
 end of the treeish, like so:
 
     master:/path/to/file
-    
+
 ## Range
 
 Finally, you can specify a range of commits with the range spec.  This will
@@ -108,4 +108,4 @@ excluding 7b593b5 but including 51bea1:
 
 This will include every commit *since* 7b593b:
 
-    7b593b.. 
+    7b593b..

@@ -34,10 +34,9 @@ a new directory named 'linux-2.6')
 
 ## Initializing a New Repository
 
-Assume you have a tarball named project.tar.gz with your initial work. You can
+Assume you have a directory named `project` with your initial work. You can
 place it under git revision control as follows.
 
-    $ tar xzf project.tar.gz
     $ cd project
     $ git init
 

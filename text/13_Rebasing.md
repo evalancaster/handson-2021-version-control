@@ -3,20 +3,20 @@
 Suppose that you create a branch "mywork" on a remote-tracking branch
 "origin".
 
-    $ git checkout -b mywork origin
+    git checkout -b mywork origin
 
 ![origin and mywork point to commit C2](../figure/rebase0.png)
 
 Now you do some work, creating two new commits.
 
-    $ vi file.txt
-    $ git commit
-    $ vi otherfile.txt
-    $ git commit
+    vi file.txt
+    git commit
+    vi otherfile.txt
+    git commit
     ...
-    
+
 Meanwhile, someone else does some work creating two new commits on the origin
-branch too. This means both 'origin' and 'mywork' has advanced, which means 
+branch too. This means both 'origin' and 'mywork' has advanced, which means
 the work has diverged.
 
 ![origin (C4) and mywork (C6) diverge at C2](../figure/rebase1.png)
@@ -30,17 +30,17 @@ However, if you prefer to keep the history in mywork a simple series of
 commits without any merges, you may instead choose to use
 [git rebase](https://git-scm.com/docs/git-rebase):
 
-    $ git checkout mywork
-    $ git rebase origin
+    git checkout mywork
+    git rebase origin
 
 This will remove each of your commits from mywork, temporarily saving
 them as patches (in a directory named ".git/rebase"), update mywork to
 point at the latest version of origin, then apply each of the saved
-patches to the new mywork.  
+patches to the new mywork.
 
 ![git rebase applies C5' and C6' to origin (C4)](../figure/rebase3.png)
 
-Once the ref ('mywork') is updated to point to the newly created commit 
+Once the ref ('mywork') is updated to point to the newly created commit
 objects, your older commits will be abandoned.  They will likely be
 removed if you run a pruning garbage collection. (see [git gc](https://git-scm.com/docs/git-gc))
 
@@ -56,11 +56,11 @@ and allow you to fix the conflicts; after fixing conflicts, use "git-add"
 to update the index with those contents, and then, instead of
 running git-commit, just run
 
-    $ git rebase --continue
+    git rebase --continue
 
 and git will continue applying the rest of the patches.
 
 At any point you may use the `--abort` option to abort this process and
 return mywork to the state it had before you started the rebase:
 
-    $ git rebase --abort
+    git rebase --abort

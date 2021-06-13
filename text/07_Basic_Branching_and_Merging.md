@@ -3,11 +3,11 @@
 A single git repository can maintain multiple branches of
 development.  To create a new branch named "experimental", use
 
-    $ git branch experimental
+    git branch experimental
 
 If you now run
 
-    $ git branch
+    git branch
 
 you'll get a list of all existing branches:
 
@@ -19,14 +19,14 @@ The "experimental" branch is the one you just created, and the
 automatically.  The asterisk marks the branch you are currently on;
 type
 
-    $ git checkout experimental
+    git checkout experimental
 
 to switch to the experimental branch.  Now edit a file, commit the
 change, and switch back to the master branch:
 
     (edit file)
-    $ git commit -a
-    $ git checkout master
+    git commit -a
+    git checkout master
 
 Check that the change you made is no longer visible, since it was
 made on the experimental branch and you're back on the master branch.
@@ -34,32 +34,32 @@ made on the experimental branch and you're back on the master branch.
 You can make a different change on the master branch:
 
     (edit file)
-    $ git commit -a
+    git commit -a
 
 at this point the two branches have diverged, with different changes
 made in each.  To merge the changes made in experimental into master, run
 
-    $ git merge experimental
+    git merge experimental
 
 If the changes don't conflict, you're done.  If there are conflicts,
 markers will be left in the problematic files showing the conflict;
 
-    $ git diff
+    git diff
 
 will show this.  Once you've edited the files to resolve the
 conflicts,
 
-    $ git commit -a
+    git commit -a
 
 will commit the result of the merge. Finally,
 
-    $ gitk
+    gitk
 
 will show a nice graphical representation of the resulting history.
 
 At this point you could delete the experimental branch with
 
-    $ git branch -d experimental
+    git branch -d experimental
 
 This command ensures that the changes in the experimental branch are
 already in the current branch.
@@ -67,7 +67,7 @@ already in the current branch.
 If you develop on a branch crazy-idea, then regret it, you can always
 delete the branch with
 
-    $ git branch -D crazy-idea
+    git branch -D crazy-idea
 
 Branches are cheap and easy, so this is a good way to try something
 out.
@@ -77,14 +77,14 @@ out.
 You can rejoin two diverging branches of development using
 [git merge](https://git-scm.com/docs/git-merge):
 
-    $ git merge branchname
+    git merge branchname
 
 merges the changes made in the branch "branchname" into the current
 branch.  If there are conflicts--for example, if the same file is
 modified in two different ways in the remote branch and the local
 branch--then you are warned; the output may look something like this:
 
-    $ git merge next
+    git merge next
      100% (4/4) done
     Auto-merged file.txt
     CONFLICT (content): Merge conflict in file.txt
@@ -106,14 +106,15 @@ the working tree in a special state that gives you all the
 information you need to help resolve the merge.
 
 Files with conflicts are marked specially in the index, so until you
-resolve the problem and update the index, [git commit](https://git-scm.com/docs/git-commit) will
-fail:
+resolve the problem and update the index, [git commit](https://git-scm.com/docs/git-commit)
+will fail:
 
     $ git commit
     file.txt: needs merge
 
-Also, [git status](https://git-scm.com/docs/git-status) will list those files as "unmerged", and the
-files with conflicts will have conflict markers added, like this:
+Also, [git status](https://git-scm.com/docs/git-status) will list those files
+as "unmerged", and the files with conflicts will have conflict markers added,
+like this:
 
     <<<<<<< HEAD:file.txt
     Hello world
@@ -123,8 +124,8 @@ files with conflicts will have conflict markers added, like this:
 
 All you need to do is edit the files to resolve the conflicts, and then
 
-    $ git add file.txt
-    $ git commit
+    git add file.txt
+    git commit
 
 Note that the commit message will already be filled in for you with
 some information about the merge.  Normally you can just use this
@@ -139,11 +140,11 @@ also provides more information to help resolve conflicts:
 If you get stuck and decide to just give up and throw the whole mess
 away, you can always return to the pre-merge state with
 
-    $ git reset --hard HEAD
+    git reset --hard HEAD
 
 Or, if you've already committed the merge that you want to throw away,
 
-    $ git reset --hard ORIG_HEAD
+    git reset --hard ORIG_HEAD
 
 However, this last command can be dangerous in some cases--never throw away a
 commit if that commit may itself have been merged into another branch, as
