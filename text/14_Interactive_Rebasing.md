@@ -17,7 +17,7 @@ since the last time you have pushed (or merged from the origin repository).
 
 To see what commits those are beforehand, you can run log this way:
 
-    git log github/master..
+    git log origin/master..
 
 Once you run the 'rebase -i' command, you will be thrown into your editor
 of choice with something that looks like this:
@@ -119,5 +119,5 @@ the rebase dropped you to the command line :
 And now instead of 5 commits, you would have 6.
 
 The last useful thing that interactive rebase can do is drop commits for you.
-If instead of choosing 'pick', 'squash' or 'edit' for the commit line, you
-simply remove the line, it will remove the commit from the history.
+If you simply remove the lin instead of choosing 'pick', 'squash' or 'edit' for
+the commit line, it will remove the commit from the history.

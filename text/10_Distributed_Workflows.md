@@ -82,8 +82,8 @@ used for pulls:
     /home/alice/project
 
 (The complete configuration created by git-clone is visible using
-"git config -l", and the [git config](https://git-scm.com/docs/git-config) man page
-explains the meaning of each option.)
+"git config -l", and the [git config](https://git-scm.com/docs/git-config) man
+page explains the meaning of each option.)
 
 Git also keeps a pristine copy of Alice's master branch under the
 name "origin/master":
@@ -99,76 +99,11 @@ perform clones and pulls using the ssh protocol:
 Alternatively, git has a native protocol, or can use rsync or http;
 see [git pull](https://git-scm.com/docs/git-pull) for details.
 
-## Public git repositories
-
-Another way to submit changes to a project is to tell the maintainer
-of that project to pull the changes from your repository using
-[git pull](https://git-scm.com/docs/git-pull).  This is a way to get
-updates from the "main" repository, but it works just as well in the
-other direction.
-
-If you and the maintainer both have accounts on the same machine, then
-you can just pull changes from each other's repositories directly;
-commands that accept repository URLs as arguments will also accept a
-local directory name:
-
-    git clone /path/to/repository
-    git pull /path/to/other/repository
-
-or an ssh URL:
-
-    git clone ssh://yourhost/~you/repository
-
-For projects with few developers, or for synchronizing a few private
-repositories, this may be all you need.
-
-However, the more common way to do this is to maintain a separate public
-repository (usually on a different host) for others to pull changes
-from.  This is usually more convenient, and allows you to cleanly
-separate private work in progress from publicly visible work.
-
-You will continue to do your day-to-day work in your personal
-repository, but periodically "push" changes from your personal
-repository into your public repository, allowing other developers to
-pull from that repository.  So the flow of changes, in a situation
-where there is one other developer with a public repository, looks
-like this:
-
-                            you push
-      your personal repo ------------------> your public repo
-        ^                                     |
-        |                                     |
-        | you pull                            | they pull
-        |                                     |
-        |                                     |
-            |               they push             V
-      their public repo <------------------- their repo
-
 ## Pushing changes to a public repository
 
-Note that exporting via http or git allow other
-maintainers to fetch your latest changes, but they do not allow write
-access.  For this, you will need to update the public repository with the
-latest changes created in your private repository.
-
-The simplest way to do this is using [git push](https://git-scm.com/docs/git-push)
-and ssh; to update the remote branch named "master" with the latest state of
-your branch named "master", run
-
-    git push ssh://yourserver.com/~you/proj.git master:master
-
-or just
-
-    git push ssh://yourserver.com/~you/proj.git master
-
-As with git-fetch, git-push will complain if this does not result in a
-fast forward; see the following section for details on
-handling this case.
-
-Note that the target of a "push" is normally a bare repository.  You can also
-push to a repository that has a checked-out working tree, but the working tree
-will not be updated by the push.  This may lead to unexpected results if the
-branch you push to is the currently checked-out branch!
+To make your changes accessible to others, you will need to update the public
+repository with the latest changes created in your private repository through
+[git push](https://git-scm.com/docs/git-push).
 
 As with git-fetch, you may also set up configuration options to
 save typing; so, for example, after
