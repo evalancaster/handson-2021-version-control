@@ -12,12 +12,16 @@ You can tell git to ignore certain files by creating a file called .gitignore
 in the top level of your working directory, with contents such as:
 
     # Lines starting with '#' are considered comments.
+
     # Ignore any file named foo.txt.
     foo.txt
+
     # Ignore (generated) html files,
     *.html
+
     # except foo.html which is maintained by hand.
     !foo.html
+
     # Ignore objects and archives.
     *.[oa]
 

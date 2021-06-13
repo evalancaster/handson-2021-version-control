@@ -8,16 +8,16 @@ information from taking up too much space on disk or in memory.
 This compression is not performed automatically.  Therefore you
 should occasionally run [git gc](https://git-scm.com/docs/git-gc):
 
-    $ git gc
+    git gc
 
 to recompress the archive.  This can be very time-consuming, so
 you may prefer to run git-gc when you are not doing other work.
 
 ## Ensuring reliability
 
-The [git fsck](https://git-scm.com/docs/git-fsck) command runs a number of self-consistency checks
-on the repository, and reports on any problems.  This may take some
-time.  The most common warning by far is about "dangling" objects:
+The [git fsck](https://git-scm.com/docs/git-fsck) command runs a number of
+self-consistency checks on the repository, and reports on any problems. This
+may take some time. The most common warning by far is about "dangling" objects:
 
     $ git fsck
     dangling commit 7281251ddd2a61e38657c827739c57015671a6b3

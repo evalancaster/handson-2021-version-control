@@ -1,86 +1,74 @@
 # Finding with Git Grep
 
-Finding files with words or phrases in Git is really easy with the 
-[git grep](https://git-scm.com/docs/git-grep) command.  It is possible to do this with the normal
-unix 'grep' command, but with 'git grep' you can also search through
-previous versions of the project without having to check them out.
+Finding files with words or phrases in Git is really easy with the
+[git grep](https://git-scm.com/docs/git-grep) command. It is possible to do this
+with the normal unix 'grep' command, but with 'git grep' you can also search
+through previous versions of the project without having to check them out.
 
-For example, if I wanted to see every place that used the 'xmmap' call in
-my git.git repository, I could run this:
+For example, if I wanted to see every place that with 'figure' links in this
+git repository, I could run this:
 
-    $ git grep xmmap
-    config.c:               contents = xmmap(NULL, contents_sz, PROT_READ,
-    diff.c:         s->data = xmmap(NULL, s->size, PROT_READ, MAP_PRIVATE, fd, 0);
-    git-compat-util.h:extern void *xmmap(void *start, size_t length, int prot, int fla
-    read-cache.c:   mmap = xmmap(NULL, mmap_size, PROT_READ | PROT_WRITE, MAP_PRIVATE,
-    refs.c: log_mapped = xmmap(NULL, mapsz, PROT_READ, MAP_PRIVATE, logfd, 0);
-    sha1_file.c:    map = xmmap(NULL, mapsz, PROT_READ, MAP_PRIVATE, fd, 0);
-    sha1_file.c:    idx_map = xmmap(NULL, idx_size, PROT_READ, MAP_PRIVATE, fd, 0);
-    sha1_file.c:                    win->base = xmmap(NULL, win->len,
-    sha1_file.c:                    map = xmmap(NULL, *size, PROT_READ, MAP_PRIVATE, f
-    sha1_file.c:            buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd, 0);
-    wrapper.c:void *xmmap(void *start, size_t length,
+    $ git grep 'figure/'
+    text/02_Git_Object_Model.md:![Blob named 5b1d3.. with some code](../figure/object-blob.png)
+    text/02_Git_Object_Model.md:![Tree named c36d4.. with some file blobs and dir trees](../figure/
+      object-tree.png)
+    text/02_Git_Object_Model.md:![Commit named ae668.. with tree, parent, author, committer, messag
+      e](../figure/object-commit.png)
+    text/02_Git_Object_Model.md:![A commit with 3 nested trees and blobs](../figure/objects-example
+      .png)
+    text/02_Git_Object_Model.md:![Tag named 49e11.. with object, type, tagger](../figure/object-tag
+      .png)
+    text/13_Rebasing.md:![origin and mywork point to commit C2](../figure/rebase0.png)
+    text/13_Rebasing.md:![origin (C4) and mywork (C6) diverge at C2](../figure/rebase1.png)
+    text/13_Rebasing.md:![git merge creates C7 by combining C4 and C6](../figure/rebase2.png)
+    text/13_Rebasing.md:![git rebase applies C5' and C6' to origin (C4)](../figure/rebase3.png)
+    text/13_Rebasing.md:![mywork moves to C6' then C5 and C6 are removed](../figure/rebase4.png)
+    text/13_Rebasing.md:![git rebase results in linear history while git merge diverge and converge
+      ](../figure/rebase5.png)
 
 If I wanted to see the line number of each match as well, I can add the '-n'
 option:
 
-    $>git grep -n xmmap
-    config.c:1016:          contents = xmmap(NULL, contents_sz, PROT_READ,
-    diff.c:1833:            s->data = xmmap(NULL, s->size, PROT_READ, MAP_PRIVATE, fd,
-    git-compat-util.h:291:extern void *xmmap(void *start, size_t length, int prot, int
-    read-cache.c:1178:      mmap = xmmap(NULL, mmap_size, PROT_READ | PROT_WRITE, MAP_
-    refs.c:1345:    log_mapped = xmmap(NULL, mapsz, PROT_READ, MAP_PRIVATE, logfd, 0);
-    sha1_file.c:377:        map = xmmap(NULL, mapsz, PROT_READ, MAP_PRIVATE, fd, 0);
-    sha1_file.c:479:        idx_map = xmmap(NULL, idx_size, PROT_READ, MAP_PRIVATE, fd
-    sha1_file.c:780:                        win->base = xmmap(NULL, win->len,
-    sha1_file.c:1076:                       map = xmmap(NULL, *size, PROT_READ, MAP_PR
-    sha1_file.c:2393:               buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd
-    wrapper.c:89:void *xmmap(void *start, size_t length,
+    $ git grep -n 'figure/object'
+    text/02_Git_Object_Model.md:61:![Blob named 5b1d3.. with some code](../figure/object-blob.png)
+    text/02_Git_Object_Model.md:88:![Tree named c36d4.. with some file blobs and dir trees](../figu
+      re/object-tree.png)
+    text/02_Git_Object_Model.md:129:![Commit named ae668.. with tree, parent, author, committer, me
+      ssage](../figure/object-commit.png)
+    text/02_Git_Object_Model.md:195:![A commit with 3 nested trees and blobs](../figure/objects-exa
+      mple.png)
+    text/02_Git_Object_Model.md:204:![Tag named 49e11.. with object, type, tagger](../figure/object
+      -tag.png)
 
 If we're only interested in the filename, we can pass the '--name-only' option:
 
-    $>git grep --name-only xmmap
-    config.c
-    diff.c
-    git-compat-util.h
-    read-cache.c
-    refs.c
-    sha1_file.c
-    wrapper.c
+    $ git grep --name-only 'figure/'
+    text/02_Git_Object_Model.md
+    text/13_Rebasing.md
 
-We could also see how many line matches we have in each file with the '-c' 
+We could also see how many line matches we have in each file with the '-c'
 option:
 
-    $>git grep -c xmmap
-    config.c:1
-    diff.c:1
-    git-compat-util.h:1
-    read-cache.c:1
-    refs.c:1
-    sha1_file.c:5
-    wrapper.c:1
+    $ git grep -c 'figure/'
+    text/02_Git_Object_Model.md:5
+    text/13_Rebasing.md:6
 
-Now, if I wanted to see where that was used in a specific version of git, I 
-could add the tag reference to the end, like this:
+Now, if I wanted to see where figures were used in a specific version of the
+repository, I could add a commit or tag reference to the end, like this:
 
-    $ git grep xmmap v1.5.0
-    v1.5.0:config.c:                contents = xmmap(NULL, st.st_size, PROT_READ,
-    v1.5.0:diff.c:          s->data = xmmap(NULL, s->size, PROT_READ, MAP_PRIVATE, fd,
-    v1.5.0:git-compat-util.h:static inline void *xmmap(void *start, size_t length,
-    v1.5.0:read-cache.c:                    cache_mmap = xmmap(NULL, cache_mmap_size, 
-    v1.5.0:refs.c:  log_mapped = xmmap(NULL, st.st_size, PROT_READ, MAP_PRIVATE, logfd
-    v1.5.0:sha1_file.c:     map = xmmap(NULL, st.st_size, PROT_READ, MAP_PRIVATE, fd, 
-    v1.5.0:sha1_file.c:     idx_map = xmmap(NULL, idx_size, PROT_READ, MAP_PRIVATE, fd
-    v1.5.0:sha1_file.c:                     win->base = xmmap(NULL, win->len,
-    v1.5.0:sha1_file.c:     map = xmmap(NULL, st.st_size, PROT_READ, MAP_PRIVATE, fd, 
-    v1.5.0:sha1_file.c:             buf = xmmap(NULL, size, PROT_READ, MAP_PRIVATE, fd
+    $ git grep 'figure/' 929f810
+    929f810:script/html.rb:  html.gsub! /\[fig:(.*?)\]/, '<div class="center"><img src="images/figu
+      re/\1.png"></div>'
+    929f810:text/02_Git_Object_Db_Basics/1_Trees_and_Blobs.markdown:![blob object](../../assets/ima
+      ges/figure/object-blob.png)
 
-We can see that there are some differences between the current lines and these
-lines in version 1.5.0, one of which is that xmmap is now used in wrapper.c where
-it was not back in v1.5.0.
+We can see that there are only a few lines with figure links in commit 929f810,
+which was just a markdown image test.
 
-We can also combine search terms in grep.  Say we wanted to search for where
-SORT_DIRENT is defined in our repository:
+## Advanced Search
+
+We can also combine search terms in grep. Say we wanted to search for where
+SORT_DIRENT is defined in a repository:
 
     $ git grep -e '#define' --and -e SORT_DIRENT
     builtin-fsck.c:#define SORT_DIRENT 0
@@ -105,7 +93,7 @@ We can also search for lines that have one term and either of two other terms,
 for example, if we wanted to see where we defined constants that had either
 PATH or MAX in the name:
 
-    $ git grep -e '#define' --and \( -e PATH -e MAX \) 
+    $ git grep -e '#define' --and \( -e PATH -e MAX \)
     abspath.c:#define MAXDEPTH 5
     builtin-blame.c:#define MORE_THAN_ONE_PATH      (1u<<13)
     builtin-blame.c:#define MAXSG 16

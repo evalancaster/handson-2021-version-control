@@ -3,11 +3,11 @@
 ## The SHA
 
 All the information needed to represent the history of a
-project is stored in files referenced by a 40-digit "object name" that 
+project is stored in files referenced by a 40-digit "object name" that
 looks something like this:
-    
+
     6ff87c4664981e4397625791c8ea3bbb5f2279a3
-    
+
 You will see these 40-character strings all over the place in Git.
 In each case the name is calculated by taking the SHA1 hash of the
 contents of the object.  The SHA1 hash is a cryptographic hash function.
@@ -27,7 +27,7 @@ others:
 
 Every object consists of three things - a **type**, a **size** and **content**.
 The _size_ is simply the size of the contents, the contents depend on what
-type of object it is, and there are four different types of objects: 
+type of object it is, and there are four different types of objects:
 "blob", "tree", "commit", and "tag".
 
 - A **"blob"** is used to store file data - it is generally a file.
@@ -60,7 +60,8 @@ A blob generally stores the contents of a file.
 
 ![Blob named 5b1d3.. with some code](../figure/object-blob.png)
 
-You can use [git show](https://git-scm.com/docs/git-show) to examine the contents of any blob. 
+You can use [git show](https://git-scm.com/docs/git-show) to examine the
+contents of any blob.
 Assuming we have the SHA for a blob, we can examine its contents like this:
 
     $ git show 6ff87c4664
@@ -86,9 +87,10 @@ trees - it generally represents the contents of a directory or subdirectory.
 
 ![Tree named c36d4.. with some file blobs and dir trees](../figure/object-tree.png)
 
-The ever-versatile [git show](https://git-scm.com/docs/git-show) command can also be used to
-examine tree objects, but [git ls-tree](https://git-scm.com/docs/git-ls-tree) will give you more
-details.  Assuming we have the SHA for a tree, we can examine it like this:
+The ever-versatile [git show](https://git-scm.com/docs/git-show) command can
+also be used to examine tree objects, but [git ls-tree](https://git-scm.com/docs/git-ls-tree)
+will give you more details.
+Assuming we have the SHA for a tree, we can examine it like this:
 
     $ git ls-tree fb3a8bdd0ce
     100644 blob 63c918c667fa005ff12ad89437f2fdc80926e21c    .gitignore
@@ -122,12 +124,12 @@ attention to the executable bit.
 ## Commit Object
 
 The "commit" object links a physical state of a tree with a description
-of how we got there and why. 
+of how we got there and why.
 
 ![Commit named ae668.. with tree, parent, author, committer, message](../figure/object-commit.png)
 
-You can use the --pretty=raw option to [git show](https://git-scm.com/docs/git-show) or
-[git log](https://git-scm.com/docs/git-log) to examine your favorite commit:
+You can use the --pretty=raw option to [git show](https://git-scm.com/docs/git-show)
+or [git log](https://git-scm.com/docs/git-log) to examine your favorite commit:
 
     $ git show -s --pretty=raw 2be7fcb476
     commit 2be7fcb4764f2dbcee52635b91fedb1b3dcf7ab4
@@ -167,18 +169,18 @@ explicitly, though it can identify cases where the existence of the same
 file data at changing paths suggests a rename.  (See, for example, the
 -M option to [git diff](https://git-scm.com/docs/git-diff)).
 
-A commit is usually created by [git commit](https://git-scm.com/docs/git-commit), which creates a
-commit whose parent is normally the current HEAD, and whose tree is
-taken from the content currently stored in the index.
+A commit is usually created by [git commit](https://git-scm.com/docs/git-commit),
+which creates a commit whose parent is normally the current HEAD, and whose
+tree is taken from the content currently stored in the index.
 
 ## The Object Model
 
-So, now that we've looked at the 3 main object types (blob, tree and commit), 
+So, now that we've looked at the 3 main object types (blob, tree and commit),
 let's take a quick look at how they all fit together.
 
 If we had a simple project with the following directory structure:
 
-    $>tree
+    $ tree
     .
     |-- README
     `-- lib
@@ -192,9 +194,10 @@ And we committed this to a Git repository, it would be represented like this:
 
 ![A commit with 3 nested trees and blobs](../figure/objects-example.png)
 
-You can see that we have created a **tree** object for each directory (including the root)
-and a **blob** object for each file.  Then we have a **commit** object to point
-to the root, so we can track what our project looked like when it was committed.
+You can see that we have created a **tree** object for each directory
+(including the root) and a **blob** object for each file. Then we have a
+**commit** object to point to the root, so we can track what our project looked
+like when it was committed.
 
 ## Tag Object
 
@@ -220,7 +223,7 @@ message, which may contain a signature, as can be seen using
     =2E+0
     -----END PGP SIGNATURE-----
 
-See the [git tag](https://git-scm.com/docs/git-tag) command to learn how to create and verify tag
-objects.  (Note that [git tag](https://git-scm.com/docs/git-tag) can also be used to create
-"lightweight tags", which are not tag objects at all, but just simple
-references whose names begin with "refs/tags/").
+See the [git tag](https://git-scm.com/docs/git-tag) command to learn how to
+create and verify tag objects. (Note that [git tag](https://git-scm.com/docs/git-tag)
+can also be used to create "lightweight tags", which are not tag objects at all,
+but just simple references whose names begin with "refs/tags/").

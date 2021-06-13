@@ -11,7 +11,7 @@ If you've messed up the working tree, but haven't yet committed your
 mistake, you can return the entire working tree to the last committed
 state with
 
-    $ git reset --hard HEAD
+    git reset --hard HEAD
 
 This will throw away any changes you may have added to the git index
 and as well as any outstanding changes you have in your working tree.
@@ -21,8 +21,8 @@ to both be empty.
 If you just want to restore just one file, say your hello.rb, use
 [git checkout](https://git-scm.com/docs/git-checkout) instead
 
-    $ git checkout -- hello.rb
-    $ git checkout HEAD hello.rb
+    git checkout -- hello.rb
+    git checkout HEAD hello.rb
 
 The first command restores hello.rb to the version in the index,
 so that "git diff hello.rb" returns no differences.  The second command
@@ -48,17 +48,17 @@ fundamentally different ways to fix the problem:
 ### Fixing a mistake with a new commit
 
 Creating a new commit that reverts an earlier change is very easy;
-just pass the [git revert](https://git-scm.com/docs/git-revert) command a reference to the bad
-commit; for example, to revert the most recent commit:
+just pass the [git revert](https://git-scm.com/docs/git-revert) command a
+reference to the bad commit; for example, to revert the most recent commit:
 
-    $ git revert HEAD
+    git revert HEAD
 
 This will create a new commit which undoes the change in HEAD.  You
 will be given a chance to edit the commit message for the new commit.
 
 You can also revert an earlier change, for example, the next-to-last:
 
-    $ git revert HEAD^
+    git revert HEAD^
 
 In this case git will attempt to undo the old change while leaving
 intact any changes made since then.  If more recent changes overlap
@@ -68,15 +68,14 @@ conflicts manually, just as in the case of resolving a merge.
 ### Fixing a mistake by modifying a commit
 
 If you have just committed something but realize you need to fix
-up that commit, recent versions of [git commit](https://git-scm.com/docs/git-commit) support an 
-**--amend** flag which instructs git to replace the HEAD commit
-with a new one, based on the current contents of the index.  This
-gives you an opportunity to add files that you forgot to add or
-correct typos in a commit message, prior to pushing the change
-out for the world to see.
+up that commit, recent versions of [git commit](https://git-scm.com/docs/git-commit)
+support an **--amend** flag which instructs git to replace the HEAD commit with
+a new one, based on the current contents of the index. This gives you an
+opportunity to add files that you forgot to add or correct typos in a commit
+message, prior to pushing the change out for the world to see.
 
-If you find a mistake in an older commit, but still one that you
-have not yet published to the world, you use [git rebase](https://git-scm.com/docs/git-rebase)
-in interactive mode, with "git rebase -i" marking the change
-that requires correction with **edit**.  This will allow you
-to amend the commit during the rebasing process.
+If you find a mistake in an older commit, but still one that you have not yet
+published to the world, you use [git rebase](https://git-scm.com/docs/git-rebase)
+in interactive mode, with "git rebase -i" marking the change that requires
+correction with **edit**. This will allow you to amend the commit during the
+rebasing process.

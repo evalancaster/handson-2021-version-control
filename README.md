@@ -32,7 +32,7 @@
 23. [Setting Up a Private Repository](text/23_Setting_Up_a_Private_Repo.md)
 
 ## Notes
-This guide is written exclusively in Markdown—an easy-to-use, human-readable
+This guide is written exclusively in Markdown--an easy-to-use, human-readable
 markup language commonly used for documentation and communication on Github.
 You can quickly learn Markdown through
 [this guide](https://guides.github.com/features/mastering-markdown/).
