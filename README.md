@@ -31,11 +31,16 @@
 22. [Setting Up A Public Repository](text/22_Setting_Up_a_Public_Repo.md)
 23. [Setting Up a Private Repository](text/23_Setting_Up_a_Private_Repo.md)
 
-## Notes
+## See Also
+TODO additional resources
+
+## About Markdown
 This guide is written exclusively in Markdown--an easy-to-use, human-readable
 markup language commonly used for documentation and communication on Github.
 You can quickly learn Markdown through
 [this guide](https://guides.github.com/features/mastering-markdown/).
+
+TODO lint rules
 
 ## Credits
 Adapted from [gitbook](https://github.com/schacon/gitbook) by
