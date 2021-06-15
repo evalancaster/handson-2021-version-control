@@ -57,17 +57,3 @@ git pull upstream master
 
 git push origin master
 
-
-
-
-Maintenance: 
-* Git can become slow if large amount of files or large files stored
-* Best to compress large files and remove the ones you no longer need
-* This means setting aside time to go through your repositories periodically
-* Before removing files, “backup your repository before starting. The easiest way to create a backup is to clone your repository using the --mirror flag, and zip the whole clone. With the backup, if you accidentally corrupt a key element of your repo during maintenance, you can recover.”
-* Understand that even if a file is removed, the file stills remains in the repository because through historical commits
-   * To remove file completely:” remove the file from repository history - rewriting Git history, deleting the file from all commits containing it”
-   * remove all reflog history that refers to the old commit history… git filter-branch
-      * First find your big file, second 
-   * Git 'gc' (garbage collection) will remove all data from the repository that is not actually used, or in some way referenced, by any of your branches or tags. In order for that to be useful, we need to rewrite all Git repository history that contained the unwanted file, so that it no longer references it - git gc will then be able to discard the now-unused data…. Repacks the repository
-* The git fsck command runs a number of self-consistency checks on the repository, and reports on any problems…. Leave time for all of these commands
