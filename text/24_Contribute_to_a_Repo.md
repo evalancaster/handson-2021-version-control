@@ -8,7 +8,7 @@ Follow a few simple steps to establish a collaborative workflow.
 
 1. **Fork project you're interested in contributing to.** This copies the project repository and history to your own personal GitHub account. Find the project repository on GitHub and click the "Fork" button. This will take you to a copy of the repository in your account. 
 
-1. **Clone fork to your local computer.** This copies the fork from GitHub to a subdirectory on your local machine. This is where you will edit the files and add your contribution from your local machine. 
+2. **Clone fork to your local computer.** This copies the fork from GitHub to a subdirectory on your local machine. This is where you will edit the files and add your contribution from your local machine. 
 
 ```git clone https://github.com/evalancaster/handson-2021-version-control```
 
@@ -31,19 +31,19 @@ It is generally good practice to create a separate branch from the “master” 
 Your new branch name should be informative about the modifications you intend to make. Here, the new branch is named learn-collab because we are completing this exercise in order to learn how to use Git collaboratively. Running git branch will show that you have a master branch, but that you are currently working on (or have checked out) the “learn-collab” branch. Your checked out branch is denoted by an asterisk.
 
 
-1. **Make edits to the repository, stage and then commit your changes.** Open one of the project files and make an edit to the text. Add this modified file to the staging area and commit your changes with a meaningful message. 
+3. **Make edits to the repository, stage and then commit your changes.** Open one of the project files and make an edit to the text. Add this modified file to the staging area and commit your changes with a meaningful message. 
 
 ```git add -A```
 
 ```git commit -m "describe rationale for changes here"```
 
 
-1. **Push changes.** You can now push the changes to origin (your forked remote repository on GitHub). After pushing the branch that contains your modifications, return to your forked repository (origin) on GitHub to see the push notice.
+4. **Push changes.** You can now push the changes to origin (your forked remote repository on GitHub). After pushing the branch that contains your modifications, return to your forked repository (origin) on GitHub to see the push notice.
 
 ```git push origin learn-collab```
 
 
-1. **Submit a pull request.** Now that you have made your contribution, you can submit the modified project to the upstream repository. To notify the owner of your changes you must submit a pull request. The administrator can then decide whether to merge your changes into the original repository. If your changes are merged, GitHub will notify you and prompt you to delete the branch containing those edits. This deletes the branch from the origin repository, but you will have to manually delete it from your local repository as well.
+5. **Submit a pull request.** Now that you have made your contribution, you can submit the modified project to the upstream repository. To notify the owner of your changes you must submit a pull request. The administrator can then decide whether to merge your changes into the original repository. If your changes are merged, GitHub will notify you and prompt you to delete the branch containing those edits. This deletes the branch from the origin repository, but you will have to manually delete it from your local repository as well.
 
 ```git checkout master```
 
