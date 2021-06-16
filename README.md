@@ -30,7 +30,6 @@
 21. [Maintaining Git](text/21_Maintaining_Git.md)
 22. [Setting Up A Public Repository](text/22_Setting_Up_a_Public_Repo.md)
 23. [Setting Up a Private Repository](text/23_Setting_Up_a_Private_Repo.md)
-24. [Contributing to a Repository](text/24_Contribute_to_a_Repo.md)
 
 ## Notes
 This guide is written exclusively in Markdown--an easy-to-use, human-readable
