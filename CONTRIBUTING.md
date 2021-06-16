@@ -73,6 +73,41 @@ remote repository.
     git pull upstream master
     git push origin master
 
+You can read more about contributing to Github projects on the
+[Pro Git book](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project).
+
+## Guide for Maintainers
+
+Maintaining a Github project mostly involves communication. There are two
+avenues of communication:
+
+1. **Issues**: This is a forum for reporting and discussing ways to improve the
+   project. Most bug fixes or new features start here. For any non-trivial
+   issues, it is important to discuss how to implement the improvement before
+   assigning someone to actually work on it. This makes sure the people involved
+   agree on what to do and that contributors work together efficiently.
+
+   Maintainers should use "labels" to help contributors find issues and "close"
+   them when they are addressed, usually done automatically when relevant pull
+   requests are merged.
+
+2. **Pull Requests**: This is a where final decisions are made and changes may
+   get incorporated to the project. A pull request often addresses one or more
+   issues, and maintainers should make sure they are linked to the request.
+   Reviewing pull requests often also involve testing. Projects usually set up
+   automatic Github Actions that test every pull requests and report the results
+   If the pull request could work but has some problems, maintainers should
+   collaborate with the contributor to fix them.
+
+   Once you are sure that the pull request improves the project without breaking
+   anything, you can merge and close the pull request. It is important to double
+   check ***which branch*** you are merging to. Often, projects merge pull
+   requests to a development branch only and gradually merge that to a stable
+   branch to be extra safe.
+
+You can read more about maintaining Github projects on the
+[Pro Git book](https://git-scm.com/book/en/v2/GitHub-Maintaining-a-Project).
+
 ## Markdown
 
 This guide is written exclusively in Markdown--an easy-to-use, human-readable

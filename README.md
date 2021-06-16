@@ -39,6 +39,8 @@ Github and/or Git. To begin, please read our guide on [contributing](./CONTRIBUT
 
 ## Additional Resources
 
+* [Pro Git book](https://git-scm.com/book)
+  for a comprehensive guide on everything Git and Github
 * [Git Cheat Sheets](https://training.github.com/)
   for a quick reference to Git commands
 * [GitHub Learning Lab](https://lab.github.com/)
