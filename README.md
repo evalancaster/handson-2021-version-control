@@ -37,6 +37,13 @@ markup language commonly used for documentation and communication on Github.
 You can quickly learn Markdown through
 [this guide](https://guides.github.com/features/mastering-markdown/).
 
+## Additional Resources
+* [Git Cheat Sheets](https://training.github.com/) for a quick reference to Git commands
+* [GitHub Learning Lab](https://lab.github.com/) for hands-on practice using Git
+* [Git-it](https://github.com/jlord/git-it-electron) for a desktop app with Git challenges
+* [Happy Git with R](https://happygitwithr.com/) for integrating Git version control with R
+* [DataLad](https://www.datalad.org/) for Git-like version control for datasets
+
 ## Credits
 Adapted from [gitbook](https://github.com/schacon/gitbook) by
 * Scott Chacon
