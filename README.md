@@ -41,9 +41,9 @@ You can quickly learn Markdown through
 ## Additional Resources
 * [Git Cheat Sheets](https://training.github.com/) for a quick reference to Git commands
 * [GitHub Learning Lab](https://lab.github.com/) for hands-on practice using Git
-* [DataLad](https://www.datalad.org/) for a Git-compatible data repository
 * [Git-it](https://github.com/jlord/git-it-electron) for a desktop app with Git challenges
 * [Happy Git with R](https://happygitwithr.com/) for integrating Git version control with R
+* [DataLad](https://www.datalad.org/) for Git-like version control for datasets
 
 ## Credits
 Adapted from [gitbook](https://github.com/schacon/gitbook) by
