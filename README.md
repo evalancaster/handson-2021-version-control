@@ -39,14 +39,20 @@ Github and/or Git. To begin, please read our guide on [contributing](./CONTRIBUT
 
 ## Additional Resources
 
-* [Git Cheat Sheets](https://training.github.com/) for a quick reference to Git commands
-* [GitHub Learning Lab](https://lab.github.com/) for hands-on practice using Git
-* [Git-it](https://github.com/jlord/git-it-electron) for a desktop app with Git challenges
-* [Happy Git with R](https://happygitwithr.com/) for integrating Git version control with R
-* [DataLad](https://www.datalad.org/) for Git-like version control for datasets
+* [Git Cheat Sheets](https://training.github.com/)
+  for a quick reference to Git commands
+* [GitHub Learning Lab](https://lab.github.com/)
+  for hands-on practice using Git
+* [Git-it](https://github.com/jlord/git-it-electron)
+  for a desktop app with Git challenges
+* [Happy Git with R](https://happygitwithr.com/)
+  for integrating Git version control with R
+* [DataLad](https://www.datalad.org/)
+  for Git-like version control of datasets
 
 ## Credits
 
 Adapted from [gitbook](https://github.com/schacon/gitbook) by
+
 * Scott Chacon
 * Emil Sit
