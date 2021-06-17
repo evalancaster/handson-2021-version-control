@@ -14,6 +14,9 @@ protocols, so it may begin with ssh://, http(s)://, git://, or just a username
 more than one protocol. For example, the source code to Git itself can be
 cloned either over the git:// protocol:
 
+First, go to the directory of the local repository like so
+    `cd <directory/path>` 
+
     git clone git://git.kernel.org/pub/scm/git/git.git
 
 or over http:
