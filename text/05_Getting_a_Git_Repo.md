@@ -12,13 +12,19 @@ URL - the location of the repository. Git can operate over many different
 protocols, so it may begin with ssh://, http(s)://, git://, or just a username
 (in which case git will assume ssh). Some repositories may be accessed over
 more than one protocol. For example, the source code to Git itself can be
-cloned either over the git:// protocol:
+cloned either over the git:// protocol.
+    
+First, go to the local directory on your computer like so:
 
-    git clone git://git.kernel.org/pub/scm/git/git.git
+    `cd <directory path>`
+    
+To clone the repository to the directory:
+
+    `git clone git://git.kernel.org/pub/scm/git/git.git`
 
 or over http:
 
-    git clone http://www.kernel.org/pub/scm/git/git.git
+    `git clone http://www.kernel.org/pub/scm/git/git.git`
 
 The git:// protocol is faster and more efficient, but sometimes it is
 necessary to use http when behind corporate firewalls or what have you. In
